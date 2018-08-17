@@ -25,7 +25,7 @@ def get_access(refresh_token):
     api_server = json_data['api_server']
     return access_token, api_server
 
-### Example refresh token response ###
+### Example refresh token response - NOTE THAT THIS TOKEN IS EXPIRED ###
 #example = {
 #    "access_token": "aqFpAEoxhgCfQLJvWTNM5h8bM2kUEVe50",
 #    "api_server": "https://api02.iq.questrade.com/",
@@ -40,7 +40,7 @@ refresh = str(sys.argv[1])
 if refresh == "refresh":
     refresh_token = input("Enter your refresh token:")
     access_token, api_server = get_access(refresh_token)
-    print ("Use access token and server information from access.txt and server.txt")
+    print ("Use access token and server information from access.txt and server.txt to run collect_data.py")
     
     with open('access.txt', 'w') as f:
          print(access_token[::-1], file=f)
